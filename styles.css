@@ -1,0 +1,712 @@
+/* Reset básico */
+body, h1, h2, h3, p, ul {
+    margin: 0;
+    padding: 0;
+    font-family: 'Dancing Script', cursive;
+    color: #4a4a4a;
+}
+
+/* Estilos gerais */
+body {
+    line-height: 1.6;
+    background-color: #fdf5e6;
+    padding-top: 70px; 
+    font-family: 'Playfair Display', serif;
+}
+
+/* Cabeçalho */
+.header__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #fff0f5;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    padding: 15px 30px;
+    height: 70px; 
+}
+
+/* Estilo da logo */
+.logo img {
+    max-height: 50px;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Estilo do botão de menu hambúrguer */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: #4a4a4a;
+    cursor: pointer;
+    z-index: 1001; 
+}
+
+/* Estilo da navegação */
+.main-nav {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.main-nav ul {
+    display: flex;
+    gap: 20px;
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: #4a4a4a;
+    font-weight: bold;
+    font-family: 'Great Vibes', cursive;
+    font-size: 1.2rem;
+    transition: color 0.3s ease-in-out;
+}
+
+.main-nav a:hover {
+    color: #d08a94;
+}
+
+/* Estilo e animação dos ícones de redes sociais */
+.social-icons {
+    display: flex;
+    gap: 10px;
+}
+
+.social-icon {
+    color: #4a4a4a;
+    font-size: 1.5rem;
+    transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.social-icon:hover {
+    color: #d08a94;
+    transform: scale(1.2);
+}
+
+/* Estilo dos botões */
+.subscribe-btn {
+    background-color: #d08a94;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: bold;
+    font-family: 'Great Vibes', cursive;
+    font-size: 1.2rem;
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.subscribe-btn:hover {
+    background-color: #b66a78;
+    transform: scale(1.05);
+}
+
+/* Menu Hambúrguer */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: #4a4a4a;
+    cursor: pointer;
+}
+
+/* Menu de navegação para dispositivos móveis */
+.main-nav {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.main-nav ul {
+    display: flex;
+    gap: 20px;
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    .header__container {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 15px;
+        height: auto; 
+    }
+
+    .main-nav {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        gap: 10px;
+        position: absolute;
+        top: 70px; 
+        left: 0;
+        background-color: #fff0f5;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        z-index: 999; 
+        padding: 10px 0;
+    }
+
+    .main-nav.active {
+        display: flex;
+    }
+
+    .main-nav ul {
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+
+    .main-nav li {
+        margin: 10px 0;
+    }
+
+    .social-icons {
+        justify-content: center;
+        margin-top: 15px;
+    }
+
+    .social-icon {
+        font-size: 1.2rem;
+    }
+
+    .menu-toggle {
+        display: block;
+        z-index: 1001; 
+    }
+}
+/* Seção Hero */
+.hero {
+    background-image: url('assets/hero-background.png');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    text-align: center;
+    padding: 0 20px;
+}
+.hero p{
+    color:#fff;
+}
+/* Animação do parágrafo */
+.animated-text {
+    font-size: 3.5rem;
+    color: #fff; 
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+    animation: fadeIn 2s ease-in-out, moveText 3s infinite alternate;
+    font-family: 'Great Vibes', cursive;
+    margin-bottom: 15px;
+}
+
+.animated-paragraph {
+    font-size: 1.2rem;
+    color: #fff; /* Texto branco */
+    animation: fadeIn 2s ease-in-out, moveText 3s infinite alternate;
+    font-family: 'Playfair Display', serif;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes moveText {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-10px);
+    }
+}
+
+
+/* Seção Sobre Nós */
+.sobre {
+    padding: 80px 20px;
+    background-color: #fff;
+}
+
+.sobre__content {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    position: relative; 
+}
+
+.sobre__imagem {
+    flex: 1;
+    max-width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.5s ease-in-out;
+}
+
+.sobre__imagem:hover {
+    transform: scale(1.05);
+}
+
+.sobre__texto {
+    flex: 2;
+    text-align: left;
+}
+
+.sobre__texto h2 {
+    font-size: 2.5rem;
+    color: #d08a94;
+    margin-bottom: 20px;
+    font-family: 'Dancing Script', cursive;
+}
+
+.sobre__texto p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #555;
+}
+
+.saiba-mais-btn {
+    display: inline-block;
+    background-color: #d08a94;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-family: 'Playfair Display', serif;
+    margin-top: 20px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.saiba-mais-btn:hover {
+    background-color: #b66a78;
+    transform: translateY(-3px);
+}
+
+/* Seção Serviços */
+.servicos {
+    padding: 80px 20px;
+    background-color: #fdf5e6;
+}
+
+.servicos__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.servico-item {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s ease-out forwards;
+}
+
+.servico-item:nth-child(1) {
+    animation-delay: 0.3s;
+}
+
+.servico-item:nth-child(2) {
+    animation-delay: 0.6s;
+}
+
+.servico-item:nth-child(3) {
+    animation-delay: 0.9s;
+}
+
+.servico-item h3 {
+    font-size: 1.8rem;
+    color: #333; 
+    margin-bottom: 15px;
+    font-family: 'Dancing Script', cursive;
+    opacity: 0;
+    transform: translateY(10px);
+    animation: fadeInUp 1s ease-out forwards, bounceIn 1s ease-in-out forwards;
+    animation-delay: 0.3s;
+}
+
+.servico-item p {
+    font-size: 1rem;
+    color: #555; 
+    opacity: 0;
+    transform: translateY(10px);
+    animation: fadeInUp 1s ease-out forwards;
+    animation-delay: 0.6s;
+}
+.animated-paragraph {
+    font-size: 1.2rem;
+    color: #333; 
+    opacity: 0;
+    animation: fadeIn 2s ease-in-out forwards;
+}
+.servico-item i {
+    font-size: 2.5rem;
+    color: #d08a94; 
+    margin-bottom: 10px;
+    opacity: 0;
+    transform: translateY(10px);
+    animation: fadeInUp 1s ease-out forwards, bounceIn 1s ease-in-out forwards;
+    animation-delay: 0s;
+}
+
+/* Animações adicionais */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes bounceIn {
+    from {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* Seção Galeria */
+.galeria {
+    padding: 80px 20px;
+    background-color: #fff;
+}
+
+.galeria__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.galeria__item img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.galeria__item img:hover {
+    transform: scale(1.05);
+}
+/* Seção Depoimentos */
+.depoimentos {
+    padding: 80px 20px;
+    background-color: #f8f4f1;
+    text-align: center;
+}
+
+.depoimentos h2 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 40px;
+    font-family: 'Dancing Script', cursive;
+}
+
+.depoimentos-slider {
+    display: flex;
+    overflow: hidden;
+    position: relative;
+}
+
+.depoimento-item {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    margin: 0 10px;
+    flex: 1;
+    min-width: 300px;
+    opacity: 0;
+    animation: fadeIn 1s ease-out forwards;
+}
+
+.depoimento-item:nth-child(1) {
+    animation-delay: 0.3s;
+}
+
+.depoimento-item:nth-child(2) {
+    animation-delay: 0.6s;
+}
+
+.depoimento-item:nth-child(3) {
+    animation-delay: 0.9s;
+}
+
+.depoimento-item p {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 15px;
+    font-style: italic;
+}
+
+.depoimento-item h3 {
+    font-size: 1.5rem;
+    color: #333;
+    margin: 10px 0;
+    font-family: 'Dancing Script', cursive;
+}
+
+.depoimento-item p:last-child {
+    font-size: 1rem;
+    color: #777;
+}
+
+/* Animação do fadeIn */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* Seção Contato */
+.contato {
+    padding: 80px 20px;
+    background-color: #fdf5e6;
+}
+
+.contato form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.contato h2 {
+    font-size: 2.5rem;
+    color: #4a4a4a;
+    text-align: center;
+    margin-bottom: 20px;
+    font-family: 'Dancing Script', cursive;
+}
+
+.contato p {
+    font-size: 1.2rem;
+    color: #555;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 1.1rem;
+    color: #4a4a4a;
+    margin-bottom: 5px;
+    font-family: 'Playfair Display', serif;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    color: #333;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #d08a94;
+}
+
+.submit-button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #d08a94;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    font-family: 'Playfair Display', serif;
+    cursor: pointer;
+    text-align: center;
+}
+
+.submit-button:hover {
+    background-color: #b66a78;
+}
+
+/* Rodapé */
+footer {
+    padding: 50px 20px;
+    background-color: #fff0f5; 
+    color: #4a4a4a;
+}
+
+.footer__container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.footer__about {
+    text-align: center; 
+}
+
+.footer__logo {
+    max-width: 150px; 
+    margin-bottom: 15px;
+    animation: pulse 1.5s infinite;
+}
+
+.footer__about h2 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    font-family: 'Dancing Script', cursive;
+    color: #d08a94; 
+}
+
+.footer__about p {
+    font-size: 1rem;
+    color: #6c6c6c; 
+}
+
+.footer__links h3,
+.footer__social h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    font-family: 'Playfair Display', serif;
+    color: #d08a94; 
+}
+
+.footer__links ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer__links ul li {
+    margin-bottom: 10px;
+}
+
+.footer__links ul li a {
+    color: #4a4a4a; 
+    text-decoration: none;
+    font-family: 'Playfair Display', serif;
+}
+
+.footer__links ul li a:hover {
+    text-decoration: underline;
+}
+
+.footer__social .social-icons {
+    display: flex;
+    gap: 10px;
+}
+
+.footer__social .social-icon {
+    color: #4a4a4a; 
+    font-size: 1.5rem;
+}
+
+.footer__social .social-icon:hover {
+    color: #d08a94; 
+}
+
+.footer__line {
+    height: 1px;
+    background-color: #d08a94; 
+    margin: 20px 0;
+}
+
+.footer__bottom {
+    text-align: center;
+    font-size: 0.9rem;
+    color: #4a4a4a; 
+}
+
+/* Animação de pulso na logo do rodapé */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.1);
+        opacity: 0.8;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+
+/*chuva dourada*/
+.gold-rain {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 1000;
+}
+
+.gold-drop {
+    position: absolute;
+    background: gold;
+    width: 2px;
+    height: 100px;
+    animation: fall linear;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(100vh);
+    }
+}
